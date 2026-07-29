@@ -6,7 +6,7 @@ export const profile = {
   linkedin: "https://www.linkedin.com/in/ramkiran-garuda-864011321/",
   resume: "/resume.pdf",
   eyebrow: "Developer & Operator",
-  headline: ["Ships systems.", "Runs schools.", "Runs trails."],
+  headline: ["Ships systems.", "Operates schools.", "Runs trails."],
   subhead:
     "BTech CSE student at VIT Vellore building production software by day — full-stack systems, AI pipelines, distributed infrastructure — and running the operations behind a K-12 learning center on the side.",
   summary:
@@ -158,6 +158,11 @@ export const extras = [
     title: "25km BMF Ultra Trail Run",
     subtitle: "Finisher",
     description: "Completed a demanding off-road ultra trail race — first attempt at endurance running.",
+  },
+  {
+    title: "Bengaluru Ultra Marathon 2026",
+    subtitle: "50km Finisher",
+    description: "Completed a 50km ultra marathon, building on the trail running base from the BMF race.",
   },
   {
     title: "ACM — VIT Student Chapter",
