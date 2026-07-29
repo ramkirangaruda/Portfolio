@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+@theme {
+  /* --- Color tokens --- */
+  --color-ink: #0F1410;        /* background */
+  --color-surface: #171D16;    /* card / raised surface */
+  --color-surface-2: #1E251C;  /* hover surface */
+  --color-line: #2B332A;       /* hairlines, borders */
+  --color-ember: #E2793D;      /* primary accent — sunrise / trail marker */
+  --color-ember-soft: #F0A56C;
+  --color-moss: #8AAD7B;       /* secondary accent — trail green */
+  --color-moss-deep: #4F6B4B;
+  --color-parchment: #F3EEE3;  /* primary text on dark */
+  --color-slate: #97A08F;      /* muted text */
+
+  /* --- Type tokens --- */
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-body: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --animate-marquee: marquee 32s linear infinite;
+  --animate-marquee-rev: marquee-rev 38s linear infinite;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes marquee-rev {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+
+@layer base {
+  * {
+    border-color: var(--color-line);
+  }
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+  body {
+    background-color: var(--color-ink);
+    color: var(--color-parchment);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection {
+    background: var(--color-ember);
+    color: var(--color-ink);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-ember);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .noise-veil {
+    position: relative;
+  }
+  .noise-veil::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
