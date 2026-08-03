@@ -15,7 +15,7 @@ export default function Beyond() {
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeading
           eyebrow="Beyond the code"
-          title="Ideathons, hackathons, trails, and a club ledger"
+          title="Ideathons, hackathons, and long trails"
         />
 
         <motion.div

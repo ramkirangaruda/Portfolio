@@ -11,9 +11,9 @@ export default function Experience() {
     <section id="experience" className="relative py-24">
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeading
-          eyebrow="Currently"
-          title="Three roles, running at once"
-          description="Not a career ladder — three tracks in parallel: shipping product, building government infrastructure, and keeping a school running day to day."
+          eyebrow="Experience"
+          title="Three roles, running in parallel"
+          description="Not a career ladder — three tracks at once: an internship shipping AI tooling, contract work on government infrastructure, and keeping a school running day to day."
         />
 
         <div className="mt-14 grid gap-6 md:grid-cols-3">
@@ -29,6 +29,11 @@ export default function Experience() {
               <h3 className="font-display text-xl text-parchment">{job.org}</h3>
               <p className="mt-1 text-sm text-ember">{job.role}</p>
               <p className="mt-0.5 font-mono text-xs text-slate">{job.place}</p>
+              {job.period && (
+                <p className="mt-2 font-mono text-[11px] uppercase tracking-[0.1em] text-moss">
+                  {job.period}
+                </p>
+              )}
 
               <ul className="mt-5 space-y-3 text-sm leading-relaxed text-slate">
                 {job.points.map((pt, i) => (

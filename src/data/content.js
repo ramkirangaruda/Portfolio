@@ -23,8 +23,9 @@ export const stats = [
 export const experience = [
   {
     org: "iFocus Systec",
-    role: "Developer — AI & Developer Tooling",
+    role: "Software Development Intern — AI & Developer Tooling",
     place: "Bangalore",
+    period: "18 May – 18 Jul 2026 · 2 months",
     points: [
       "Studied the QwikHire ATS codebase — a multi-tenant B2B SaaS with AI-run interviews — documenting WebSockets, multi-tenancy, auth, and billing from first principles.",
       "Designed an AI job-description generation pipeline for QwikHire; selected GPT-OSS 20B and 120B after comparing models on oracle correctness, automation-readiness, and security handling.",
@@ -36,6 +37,7 @@ export const experience = [
     org: "ElectraCode",
     role: "Contract Developer",
     place: "Bangalore",
+    period: "Ongoing",
     points: [
       "Built a School ERP for government residential schools in Karnataka, expanding scope from inventory management to admissions, attendance, timetables, faculty management, and health records.",
       "Project is being expanded pan-Karnataka.",
@@ -46,16 +48,91 @@ export const experience = [
     org: "SRS Learning Center",
     role: "Operations & Technology",
     place: "Bengaluru · srsedutech.com",
+    period: "Ongoing",
     points: [
       "Manage day-to-day school operations — scheduling, staff coordination, vendor management, student administration — across preschool, K-12 tuition, and IIT foundation coaching.",
+      "Run GNR Robotics (gnrrobo.com), the center's hands-on robotics program — curriculum planning, lab setup, instructor coordination, and admissions.",
       "Lead franchising and business development: evaluating partnerships, managing agreements, driving expansion of the learning center model.",
       "Deliver guest lectures for JEE aspirants on problem-solving strategy and subject fundamentals.",
-      "Built and manage the school website, integrating StaffRoom — a teacher recruitment portal — to hire directly from the platform.",
+      "Built and manage the school and GNR Robotics websites, plus the internal tooling behind admissions and hiring.",
       "Automate administrative workflows to cut manual effort across the center's operations.",
     ],
     tags: ["Operations", "Franchising", "Next.js", "Automation"],
   },
 ];
+
+export const gnr = {
+  name: "GNR Robotics",
+  parent: "by SRS EduTech",
+  url: "https://gnrrobo.com",
+  location: "SRS Learning Centre, Horamavu Agara, Bengaluru",
+  blurb:
+    "Most school robotics programs stop at a kit and a block-coding app. GNR Robotics is the opposite: a low-screen-time, build-it-with-your-hands program where students wire circuits, print parts, fly drones, and pitch what they've made. Six-plus years running, out of SRS EduTech.",
+  pillars: [
+    {
+      title: "3D Printing",
+      description: "CAD design through to printed parts students actually build with.",
+    },
+    {
+      title: "Drone Technology",
+      description: "Drone fundamentals up to FPV piloting in the senior track.",
+    },
+    {
+      title: "Applied AI",
+      description: "AI literacy grounded in working projects, not slideware.",
+    },
+    {
+      title: "TechPreneurship",
+      description: "Product thinking, prototyping, and pitch competitions.",
+    },
+  ],
+  tracks: [
+    {
+      band: "Grades 1–2",
+      name: "Tinker Explorers",
+      description: "Play-based circuits and logic games.",
+    },
+    {
+      band: "Grades 3–5",
+      name: "Foundation Builders",
+      description: "Block coding, Arduino circuits, and an intro to 3D printing.",
+    },
+    {
+      band: "Grades 6–9",
+      name: "Junior Innovator",
+      description: "AI literacy, electronics, CAD design, and drone basics.",
+    },
+    {
+      band: "Grades 10–12",
+      name: "TechPreneurship Track",
+      description: "Embedded systems, Python, FPV drone piloting, and pitch competitions.",
+    },
+  ],
+};
+
+export const toastmasters = {
+  club: "Toastmasters International",
+  role: "Club Treasurer",
+  blurb:
+    "I joined to get better at saying things out loud — the same skill that decides whether a design doc lands or a guest lecture holds a room. Ended up holding the club's ledger too.",
+  pillars: [
+    {
+      title: "Club Treasurer",
+      description:
+        "Own the club's finances end to end: budgeting, dues collection, event fund allocation, and keeping the books clean for the executive committee.",
+    },
+    {
+      title: "Prepared Speeches",
+      description:
+        "Deliver prepared speeches and take structured evaluations on them — the fastest feedback loop I've found for tightening an argument.",
+    },
+    {
+      title: "Table Topics",
+      description:
+        "Regular Table Topics speaker: one to two minutes, no prep, no notes. Good practice for thinking clearly while being watched.",
+    },
+  ],
+};
 
 export const projects = [
   {
@@ -82,7 +159,7 @@ export const projects = [
     description:
       "Dispatches Python jobs to remote workers via Redis-backed CPU/GPU queues, with isolated Docker execution, PyTorch/CUDA support, and a real-time monitoring dashboard.",
     tags: ["FastAPI", "Redis", "Docker", "React", "Tailwind CSS"],
-    href: "https://github.com/ramkirangaruda/gridforge",
+    href: "https://github.com/ramkirangaruda/gridforge-backend",
     meta: "GPU-aware queues",
   },
   {
@@ -95,13 +172,13 @@ export const projects = [
     meta: "PWA + push notifications",
   },
   {
-    name: "StaffRoom",
-    tagline: "Teacher recruitment marketplace",
+    name: "GNR Robotics",
+    tagline: "K-12 robotics program — site and enrolment flow",
     description:
-      "Connects schools with teachers through job listings, candidate profiles, and matching — integrated directly into SRS Learning Center's hiring flow.",
-    tags: ["Next.js", "Prisma", "PostgreSQL", "NextAuth"],
-    href: "https://staffroom-three.vercel.app/",
-    meta: "Live product",
+      "Public site and enrolment funnel for GNR Robotics by SRS EduTech: four grade-band tracks, program pages for 3D printing, drones, applied AI, and TechPreneurship, and a demo-booking flow feeding the center's admissions.",
+    tags: ["Next.js", "Tailwind CSS", "Vercel", "SEO"],
+    href: "https://gnrrobo.com",
+    meta: "Live · gnrrobo.com",
   },
 ];
 
@@ -149,11 +226,6 @@ export const achievements = [
 ];
 
 export const extras = [
-  {
-    title: "Toastmasters International",
-    subtitle: "Club Treasurer",
-    description: "Managed club finances, budgeting, and event fund allocation. Active speaker in Table Topics and prepared speeches.",
-  },
   {
     title: "25km BMF Ultra Trail Run",
     subtitle: "Finisher",
