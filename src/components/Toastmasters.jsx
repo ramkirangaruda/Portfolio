@@ -1,41 +1,37 @@
 import { motion } from "framer-motion";
 import { toastmasters } from "../data/content.js";
-import { SectionHeading } from "./Experience.jsx";
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } },
-};
+import { SectionHead } from "./Section.jsx";
+import { fadeUp, stagger } from "../lib/motion.js";
 
 export default function Toastmasters() {
   return (
-    <section id="toastmasters" className="relative border-t border-line py-24">
-      <div className="mx-auto max-w-6xl px-6">
-        <SectionHeading
-          eyebrow={toastmasters.role}
-          title={toastmasters.club}
-          description={toastmasters.blurb}
-        />
+    <section id="toastmasters" className="border-t border-hair px-[4vw] py-[14vh]">
+      <SectionHead
+        eyebrow={toastmasters.role}
+        title="Toastmasters"
+        em="International"
+        description={toastmasters.blurb}
+      />
 
-        <motion.div
-          variants={{ hidden: {}, show: { transition: { staggerChildren: 0.07 } } }}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-10%" }}
-          className="mt-12 grid gap-5 sm:grid-cols-3"
-        >
-          {toastmasters.pillars.map((pillar) => (
-            <motion.div
-              key={pillar.title}
-              variants={fadeUp}
-              className="rounded-2xl border border-line bg-surface p-6"
-            >
-              <h3 className="font-display text-lg text-parchment">{pillar.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-slate">{pillar.description}</p>
-            </motion.div>
-          ))}
-        </motion.div>
-      </div>
+      <motion.div
+        variants={stagger}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, margin: "-10%" }}
+        className="mt-[8vh] grid gap-px border border-hair bg-hair md:grid-cols-3"
+      >
+        {toastmasters.pillars.map((pillar, i) => (
+          <motion.div key={pillar.title} variants={fadeUp} className="bg-ink p-8">
+            <span className="font-mono text-[10px] tracking-[0.2em] text-acid">
+              {String(i + 1).padStart(2, "0")}
+            </span>
+            <h3 className="mt-5 display text-[clamp(1.5rem,2.4vw,2.125rem)] leading-[0.95] text-bone">
+              {pillar.title}
+            </h3>
+            <p className="mt-4 text-sm leading-relaxed text-dim">{pillar.description}</p>
+          </motion.div>
+        ))}
+      </motion.div>
     </section>
   );
 }

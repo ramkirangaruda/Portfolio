@@ -1,74 +1,79 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
-import { profile } from "../data/content.js";
-import { ContourBackdrop } from "./ContourLine.jsx";
-import SplitText from "./SplitText.jsx";
-import { GithubIcon, LinkedinIcon } from "./icons.jsx";
+import { profile, stats } from "../data/content.js";
+import { Eyebrow } from "./Section.jsx";
+
+const variantClass = {
+  solid: "text-bone",
+  hollow: "txt-hollow-thick",
+  acid: "text-acid",
+};
+
+/** Each headline line masks its own overflow so the words wipe up from below. */
+function Line({ words, delay }) {
+  return (
+    <span className="block overflow-hidden">
+      <motion.span
+        initial={{ y: "110%" }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.9, delay, ease: [0.16, 1, 0.3, 1] }}
+        className="block"
+      >
+        {words.map((w, i) => (
+          <span key={i} className={variantClass[w.v]}>
+            {i > 0 && " "}
+            {w.t}
+          </span>
+        ))}
+      </motion.span>
+    </span>
+  );
+}
 
 export default function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden pt-36 pb-24 md:pt-44 md:pb-32">
-      <ContourBackdrop />
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-ink/0 via-ink/0 to-ink" />
+    <section
+      id="top"
+      className="grain relative flex min-h-[100svh] flex-col justify-end overflow-hidden px-[4vw] pb-[6vh] pt-32"
+    >
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute inset-0 bg-[radial-gradient(60%_60%_at_70%_40%,rgba(232,255,71,0.04),transparent_70%),radial-gradient(40%_50%_at_20%_80%,rgba(232,255,71,0.02),transparent_60%)]" />
+        <div className="blueprint absolute inset-0" />
+      </div>
 
-      <div className="relative mx-auto max-w-6xl px-6">
-        <motion.p
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="mb-6 font-mono text-xs uppercase tracking-[0.2em] text-ember"
-        >
-          {profile.eyebrow} — {profile.location}
-        </motion.p>
-
-        <h1 className="max-w-4xl font-display text-5xl font-medium leading-[1.05] text-balance sm:text-6xl md:text-7xl">
-          {profile.headline.map((line, i) => (
-            <span key={i} className="block">
-              <SplitText text={line} delay={0.15 + i * 0.25} />
-            </span>
-          ))}
-        </h1>
-
-        <motion.p
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 1.05 }}
-          className="mt-8 max-w-xl text-balance text-lg leading-relaxed text-slate"
-        >
-          {profile.subhead}
-        </motion.p>
-
+      <div className="relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 1.25 }}
-          className="mt-10 flex flex-wrap items-center gap-4"
+          transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <a
-            href="#projects"
-            className="inline-flex items-center gap-2 rounded-full bg-ember px-5 py-2.5 font-mono text-sm text-ink transition-transform hover:scale-[1.03] hover:bg-ember-soft"
-          >
-            See the work
-            <ArrowUpRight className="h-4 w-4" />
-          </a>
-          <a
-            href={profile.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-line px-5 py-2.5 font-mono text-sm text-parchment transition-colors hover:border-ember hover:text-ember"
-          >
-            <GithubIcon className="h-4 w-4" />
-            GitHub
-          </a>
-          <a
-            href={profile.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-line px-5 py-2.5 font-mono text-sm text-parchment transition-colors hover:border-ember hover:text-ember"
-          >
-            <LinkedinIcon className="h-4 w-4" />
-            LinkedIn
-          </a>
+          <Eyebrow className="mb-[3vh]">
+            {profile.eyebrow} — {profile.location}
+          </Eyebrow>
+        </motion.div>
+
+        <h1 className="display text-[clamp(3.5rem,11.5vw,11rem)] leading-[0.8]">
+          {profile.headline.map((words, i) => (
+            <Line key={i} words={words} delay={0.3 + i * 0.15} />
+          ))}
+        </h1>
+
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.9 }}
+          className="mt-[5vh] flex flex-wrap items-end justify-between gap-x-10 gap-y-8 border-t border-hair pt-6"
+        >
+          <p className="max-w-[520px] text-[clamp(1rem,1.6vw,1.5rem)] font-semibold uppercase leading-[1.3] tracking-[0.02em] text-dim">
+            {profile.subhead}
+          </p>
+
+          <div className="text-left font-mono text-[11px] uppercase leading-[2] tracking-[0.16em] text-faint sm:text-right">
+            {stats.map((s) => (
+              <div key={s.label}>
+                <i className="not-italic text-acid">{s.value}</i> {s.label}
+              </div>
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>

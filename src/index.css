@@ -2,38 +2,28 @@
 
 @theme {
   /* --- Color tokens --- */
-  --color-ink: #0F1410;        /* background */
-  --color-surface: #171D16;    /* card / raised surface */
-  --color-surface-2: #1E251C;  /* hover surface */
-  --color-line: #2B332A;       /* hairlines, borders */
-  --color-ember: #E2793D;      /* primary accent — sunrise / trail marker */
-  --color-ember-soft: #F0A56C;
-  --color-moss: #8AAD7B;       /* secondary accent — trail green */
-  --color-moss-deep: #4F6B4B;
-  --color-parchment: #F3EEE3;  /* primary text on dark */
-  --color-slate: #97A08F;      /* muted text */
+  --color-ink: #080808;                      /* page background */
+  --color-off: #0f0f0f;                      /* raised panel */
+  --color-panel: #141414;                    /* chrome / inset */
+  --color-bone: #f2f2ef;                     /* primary text */
+  --color-dim: rgba(242, 242, 239, 0.55);    /* secondary text */
+  --color-faint: rgba(242, 242, 239, 0.28);  /* tertiary text */
+  --color-hair: rgba(242, 242, 239, 0.14);   /* hairline rules */
+  --color-acid: #e8ff47;                     /* the one accent */
 
   /* --- Type tokens --- */
-  --font-display: "Fraunces", ui-serif, Georgia, serif;
-  --font-body: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-display: "Barlow Condensed", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Barlow", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 
-  --animate-marquee: marquee 32s linear infinite;
-  --animate-marquee-rev: marquee-rev 38s linear infinite;
-}
-
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-@keyframes marquee-rev {
-  from { transform: translateX(-50%); }
-  to { transform: translateX(0); }
+  /* --- Motion --- */
+  --ease-swipe: cubic-bezier(0.7, 0, 0.2, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @layer base {
   * {
-    border-color: var(--color-line);
+    border-color: var(--color-hair);
   }
   html {
     scroll-behavior: smooth;
@@ -41,29 +31,52 @@
   }
   body {
     background-color: var(--color-ink);
-    color: var(--color-parchment);
+    color: var(--color-bone);
     font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
   }
   ::selection {
-    background: var(--color-ember);
+    background: var(--color-acid);
     color: var(--color-ink);
   }
   :focus-visible {
-    outline: 2px solid var(--color-ember);
+    outline: 2px solid var(--color-acid);
     outline-offset: 3px;
-    border-radius: 2px;
   }
+}
+
+/* Outlined display type — the signature of the whole layout. */
+@utility txt-hollow {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--color-bone);
+}
+@utility txt-hollow-thick {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--color-bone);
+}
+@utility txt-hollow-faint {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--color-faint);
+}
+/* Reverses the outline to solid black — used when an acid panel slides under it. */
+@utility txt-filled-ink {
+  color: var(--color-ink);
+  -webkit-text-stroke-color: var(--color-ink);
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
-  .noise-veil {
-    position: relative;
+  /* Uppercase condensed display block. Leading is set per call site — this
+     utility is emitted after Tailwind's leading-* rules and would win. */
+  .display {
+    font-family: var(--font-display);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
   }
-  .noise-veil::after {
+  .grain::after {
     content: "";
     position: absolute;
     inset: 0;
@@ -71,10 +84,22 @@
     opacity: 0.035;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
+  /* 80px engineering grid, masked to a soft vignette. */
+  .blueprint {
+    background-image:
+      linear-gradient(var(--color-hair) 1px, transparent 1px),
+      linear-gradient(90deg, var(--color-hair) 1px, transparent 1px);
+    background-size: 80px 80px;
+    opacity: 0.3;
+    -webkit-mask-image: radial-gradient(80% 80%, #000 30%, transparent 100%);
+    mask-image: radial-gradient(80% 80%, #000 30%, transparent 100%);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
