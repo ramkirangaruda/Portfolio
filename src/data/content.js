@@ -139,73 +139,8 @@ export const toastmasters = {
   ],
 };
 
-export const projects = [
-  {
-    no: "001",
-    name: "TicketZilla",
-    tagline: "Internal IT helpdesk, live at iFocus Systec",
-    description:
-      "Role-based support ticket system with an IT_ADMIN approval workflow, async task queuing via BullMQ, and structured ticket lifecycle management. Built for and deployed at iFocus Systec.",
-    tags: ["React", "TypeScript", "NestJS", "FastAPI", "PostgreSQL", "Redis", "BullMQ"],
-    href: "https://github.com/ramkirangaruda/IT-Support-Helpdesk-Management-System",
-    status: "Deployed",
-    type: "Full-stack platform",
-    year: "2026",
-    meta: "300+ employees",
-  },
-  {
-    no: "002",
-    name: "RetailOS",
-    tagline: "Retail analytics engine — DevSpace hackathon finalist",
-    description:
-      "Star-schema data warehouse with incremental ETL pipelines and automated stockout prediction with reorder recommendations. Sponsored-track finalist at the DevSpace 54-hour hackathon.",
-    tags: ["FastAPI", "DuckDB", "Next.js", "Docker", "JWT"],
-    href: "https://github.com/ramkirangaruda/RetailOS",
-    status: "Shipped",
-    type: "Data warehouse",
-    year: "2026",
-    meta: "Hackathon finalist",
-  },
-  {
-    no: "003",
-    name: "GridForge",
-    tagline: "Distributed task scheduling platform",
-    description:
-      "Dispatches Python jobs to remote workers via Redis-backed CPU/GPU queues, with isolated Docker execution, PyTorch/CUDA support, and a real-time monitoring dashboard.",
-    tags: ["FastAPI", "Redis", "Docker", "React", "Tailwind CSS"],
-    href: "https://github.com/ramkirangaruda/gridforge-backend",
-    status: "In build",
-    type: "Distributed systems",
-    year: "2026",
-    meta: "GPU-aware queues",
-  },
-  {
-    no: "004",
-    name: "SchoolSync",
-    tagline: "Full-featured school management PWA",
-    description:
-      "Handles student records, fee collection, attendance, homework, academic calendars, photo galleries, report cards, and timetable scheduling in one installable app.",
-    tags: ["Next.js", "Prisma", "PostgreSQL", "Tailwind", "shadcn/ui", "NextAuth"],
-    href: "https://github.com/ramkirangaruda/SRS",
-    status: "Live",
-    type: "School ERP",
-    year: "2025",
-    meta: "PWA + push notifications",
-  },
-  {
-    no: "005",
-    name: "GNR Robotics",
-    tagline: "K-12 robotics program — site and enrolment flow",
-    description:
-      "Public site and enrolment funnel for GNR Robotics by SRS EduTech: four grade-band tracks, program pages for 3D printing, drones, applied AI, and TechPreneurship, and a demo-booking flow feeding the center's admissions.",
-    tags: ["Next.js", "Tailwind CSS", "Vercel", "SEO"],
-    href: "https://gnrrobo.com",
-    status: "Live",
-    type: "Marketing site",
-    year: "2026",
-    meta: "gnrrobo.com",
-  },
-];
+// Project data lives in src/data/projects.js — the single source of truth
+// for The Index, project metrics, and the /work/:slug detail routes.
 
 export const skills = {
   Languages: ["Python", "JavaScript", "TypeScript", "SQL", "C", "C++", "Java"],
