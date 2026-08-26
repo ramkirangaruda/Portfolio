@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { nav, profile } from "../data/content.js";
 
@@ -28,22 +29,22 @@ export default function Nav() {
         }`}
       >
         <nav className="flex items-center justify-between px-[4vw] py-5">
-          <a
-            href="#top"
+          <Link
+            to="/"
             className="font-display text-[1.6rem] font-black uppercase leading-none tracking-[0.12em] text-bone"
           >
             GR<span className="text-acid">.</span>
-          </a>
+          </Link>
 
           <ul className="hidden items-center gap-8 lg:flex">
             {nav.map((item) => (
               <li key={item.href}>
-                <a
-                  href={item.href}
+                <Link
+                  to={`/${item.href}`}
                   className="font-display text-xs uppercase tracking-[0.2em] text-dim transition-colors hover:text-bone"
                 >
                   {item.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -80,13 +81,13 @@ export default function Nav() {
           <ul className="mt-10 flex flex-1 flex-col justify-center gap-2">
             {nav.map((item) => (
               <li key={item.href} className="border-b border-hair py-4">
-                <a
-                  href={item.href}
+                <Link
+                  to={`/${item.href}`}
                   onClick={() => setOpen(false)}
                   className="display text-[clamp(2.5rem,11vw,4.5rem)] leading-[0.9] text-bone transition-colors hover:text-acid"
                 >
                   {item.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

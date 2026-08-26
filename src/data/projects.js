@@ -42,9 +42,9 @@ export const projects = [
     summary:
       "A flash-sale checkout engine built to make the oversell race condition real and then beat it. Three concurrency-control strategies — pessimistic row locks, optimistic versioning, and Redis atomic decrement — implemented behind one API and benchmarked head to head, with a chaos harness, idempotency, full observability, and an admission-control queue layered on top without touching the core.",
     metrics: [
-      { label: "938 req/s", value: "Peak throughput" },
-      { label: "0", value: "Oversells, all strategies" },
-      { label: "1,000", value: "Concurrent buyers" },
+      { value: "938 req/s", label: "Peak throughput" },
+      { value: "0", label: "Oversells, all strategies" },
+      { value: "1,000", label: "Concurrent buyers" },
     ],
     tags: ["PostgreSQL", "Redis", "FastAPI", "k6", "Prometheus", "OpenTelemetry", "Docker"],
     links: {
@@ -127,9 +127,9 @@ export const projects = [
     summary:
       "Uniform quantization spends the same bit budget on every layer regardless of how much each one affects the output. Tessera allocates bits per tensor using a Lagrangian knapsack solver over measured sensitivity, stored in a nested bit-plane file format, so a single artifact serves multiple precision tiers. Paired with a hardware dongle carrying portable session state and precision profiles between devices.",
     metrics: [
-      { label: "Qwen3-1.7B", value: "Model" },
-      { label: "16.78", value: "WikiText-2 PPL" },
-      { label: "62/62", value: "Tests passing" },
+      { value: "Qwen3-1.7B", label: "Model" },
+      { value: "16.78", label: "WikiText-2 PPL" },
+      { value: "62/62", label: "Tests passing" },
     ],
     tags: ["llama.cpp", "ggml", "Quantization", "C++", "Raspberry Pi 5", "PyTorch"],
     links: {
@@ -216,9 +216,9 @@ export const projects = [
     summary:
       "Contract work for KREIS (Karnataka Residential Educational Institutions Society) under ElectraCode. The Inventory Management System is delivered — FastAPI with async SQLAlchemy, transaction-safe stock movements, audit logging and institution-scoped access. The wider ERP covering admissions, attendance, timetables, faculty and health records is proposed and in delivery across three phases, with Kannada OCR and face-scanner integration as the hard parts.",
     metrics: [
-      { label: "850", value: "Schools in scope" },
-      { label: "~255,000", value: "Students in scope" },
-      { label: "3", value: "Delivery phases" },
+      { value: "850", label: "Schools in scope" },
+      { value: "~255,000", label: "Students in scope" },
+      { value: "3", label: "Delivery phases" },
     ],
     tags: ["FastAPI", "Async SQLAlchemy", "PostgreSQL", "Jinja2", "HTMX", "Docker Compose", "Kannada OCR"],
     links: {},
