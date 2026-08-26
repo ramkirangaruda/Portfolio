@@ -5,6 +5,9 @@ export const profile = {
   github: "https://github.com/ramkirangaruda",
   linkedin: "https://www.linkedin.com/in/ramkiran-garuda-864011321/",
   resume: "/resume.pdf",
+  resumeDate: "Aug 2026",
+  // TODO(ramkiran): exact availability-line wording, e.g. "Open to Summer 2027 SDE internships"
+  availability: null,
   eyebrow: "Developer & Operator",
   /* Each line is a run of words; `v` picks solid, outlined, or accent treatment. */
   headline: [
@@ -21,8 +24,8 @@ export const profile = {
 export const stats = [
   { value: "9.28", label: "CGPA, BTech CSE" },
   { value: "300+", label: "employees on TicketZilla" },
-  { value: "96th", label: "percentile, JEE Mains" },
-  { value: "25km", label: "off-road ultra, first attempt" },
+  { value: "1,000", label: "concurrent buyers, 0 oversells" },
+  { value: "50km", label: "ultra marathon, finisher" },
 ];
 
 export const experience = [
@@ -33,7 +36,7 @@ export const experience = [
     period: "18 May – 18 Jul 2026 · 2 months",
     points: [
       "Studied the QwikHire ATS codebase — a multi-tenant B2B SaaS with AI-run interviews — documenting WebSockets, multi-tenancy, auth, and billing from first principles.",
-      "Designed an AI job-description generation pipeline for QwikHire; selected GPT-OSS 20B and 120B after comparing models on oracle correctness, automation-readiness, and security handling.",
+      "Designed an AI job-description generation pipeline for QwikHire, running a nine-model comparison across Groq-hosted models scored on oracle correctness, automation-readiness and security handling; selected GPT-OSS 20B for skill generation and 120B for JD generation, with compound-mini as production fallback.",
       "Built and shipped TicketZilla, a full-stack IT helpdesk system, deployed and used internally by 300+ employees.",
     ],
     tags: ["React", "TypeScript", "NestJS", "FastAPI", "PostgreSQL"],

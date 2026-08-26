@@ -57,6 +57,17 @@ export default function Hero() {
           ))}
         </h1>
 
+        {profile.availability && (
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.75 }}
+            className="mt-6 font-mono text-[11px] uppercase tracking-[0.2em] text-acid"
+          >
+            {profile.availability}
+          </motion.p>
+        )}
+
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}

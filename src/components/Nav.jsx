@@ -56,7 +56,7 @@ export default function Nav() {
               rel="noopener noreferrer"
               className="hidden bg-acid px-6 py-2.5 font-display text-xs font-semibold uppercase tracking-[0.16em] text-ink transition-opacity hover:opacity-85 sm:inline-block"
             >
-              Resume
+              Resume — {profile.resumeDate}
             </a>
             <button
               type="button"
@@ -98,7 +98,7 @@ export default function Nav() {
             rel="noopener noreferrer"
             className="mt-8 block bg-acid px-6 py-4 text-center font-display text-sm font-semibold uppercase tracking-[0.16em] text-ink"
           >
-            Resume
+            Resume — {profile.resumeDate}
           </a>
         </div>
       )}

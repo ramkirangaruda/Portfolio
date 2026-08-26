@@ -1,7 +1,36 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Check, Copy } from "lucide-react";
 import { profile } from "../data/content.js";
 import { GithubIcon, LinkedinIcon } from "./icons.jsx";
+
+function CopyEmailButton() {
+  const [copied, setCopied] = useState(false);
+
+  async function handleCopy() {
+    try {
+      await navigator.clipboard.writeText(profile.email);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // Clipboard API unavailable (e.g. insecure context) — mailto link still works.
+    }
+  }
+
+  return (
+    <button
+      type="button"
+      onClick={handleCopy}
+      aria-label="Copy email address to clipboard"
+      className="inline-flex items-center justify-center border border-hair p-5 text-bone transition-colors hover:border-acid hover:text-acid"
+    >
+      {copied ? <Check className="h-5 w-5 text-acid" /> : <Copy className="h-5 w-5" />}
+      <span className="sr-only" aria-live="polite">
+        {copied ? "Email copied" : ""}
+      </span>
+    </button>
+  );
+}
 
 export default function Contact() {
   return (
@@ -33,17 +62,22 @@ export default function Contact() {
           Hiring, collaborating, or just talking shop — the inbox is open.
         </motion.p>
 
-        <motion.a
+        <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-15%" }}
           transition={{ duration: 0.6, delay: 0.15 }}
-          href={`mailto:${profile.email}`}
-          className="group inline-flex items-center gap-4 bg-acid px-9 py-5 font-display text-sm font-semibold uppercase tracking-[0.16em] text-ink transition-opacity hover:opacity-85"
+          className="flex flex-wrap items-center justify-center gap-3"
         >
-          {profile.email}
-          <ArrowUpRight className="h-5 w-5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-        </motion.a>
+          <a
+            href={`mailto:${profile.email}`}
+            className="group inline-flex items-center gap-4 bg-acid px-9 py-5 font-display text-sm font-semibold uppercase tracking-[0.16em] text-ink transition-opacity hover:opacity-85"
+          >
+            {profile.email}
+            <ArrowUpRight className="h-5 w-5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+          </a>
+          <CopyEmailButton />
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0 }}
@@ -74,7 +108,7 @@ export default function Contact() {
             rel="noopener noreferrer"
             className="font-mono text-[11px] uppercase tracking-[0.18em] text-dim transition-colors hover:text-acid"
           >
-            Resume
+            Resume — {profile.resumeDate}
           </a>
         </motion.div>
       </div>
