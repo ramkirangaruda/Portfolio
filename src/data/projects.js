@@ -176,22 +176,8 @@ export const projects = [
     },
   },
   {
-    slug: "mosaic",
-    lab: "LAB/004",
-    name: "Mosaic",
-    tagline: "Context-aware adaptive memory management for on-device AI.",
-    status: "Shipped",
-    year: "2026",
-    category: "On-device AI",
-    summary:
-      "Architecture submission for the Samsung EnnovateX AX Hackathon 2026: adapting memory allocation for on-device models to the context they are running in, rather than provisioning for worst case.",
-    metrics: [],
-    tags: ["On-device AI", "Memory management", "Systems architecture"],
-    links: {},
-  },
-  {
     slug: "staffroom",
-    lab: "LAB/005",
+    lab: "LAB/004",
     name: "Staffroom",
     tagline: "Teacher recruitment marketplace for the Indian school market.",
     status: "Live",
@@ -207,7 +193,7 @@ export const projects = [
   },
   {
     slug: "kreis-school-erp",
-    lab: "LAB/006",
+    lab: "LAB/005",
     name: "Kreis School ERP",
     tagline: "School ERP for Karnataka government residential schools, scoped pan-state.",
     status: "In delivery",
@@ -225,7 +211,7 @@ export const projects = [
   },
   {
     slug: "ticketzilla",
-    lab: "LAB/007",
+    lab: "LAB/006",
     name: "TicketZilla",
     tagline: "Internal IT helpdesk, live at iFocus Systec",
     status: "Deployed",
@@ -241,7 +227,7 @@ export const projects = [
   },
   {
     slug: "retailos",
-    lab: "LAB/008",
+    lab: "LAB/007",
     name: "RetailOS",
     tagline: "Retail analytics engine — DevSpace hackathon finalist",
     status: "Shipped",
@@ -257,7 +243,7 @@ export const projects = [
   },
   {
     slug: "gridforge",
-    lab: "LAB/009",
+    lab: "LAB/008",
     name: "GridForge",
     tagline: "Distributed task scheduling platform",
     status: "In build",
@@ -272,40 +258,8 @@ export const projects = [
     },
   },
   {
-    slug: "schoolsync",
-    lab: "LAB/010",
-    name: "SchoolSync",
-    tagline: "Full-featured school management PWA",
-    status: "Live",
-    year: "2025",
-    category: "School ERP",
-    summary:
-      "Handles student records, fee collection, attendance, homework, academic calendars, photo galleries, report cards, and timetable scheduling in one installable app.",
-    metrics: [],
-    tags: ["Next.js", "Prisma", "PostgreSQL", "Tailwind", "shadcn/ui", "NextAuth"],
-    links: {
-      github: "https://github.com/ramkirangaruda/SRS",
-    },
-  },
-  {
-    slug: "gnr-robotics",
-    lab: "LAB/011",
-    name: "GNR Robotics",
-    tagline: "K-12 robotics program — site and enrolment flow",
-    status: "Live",
-    year: "2026",
-    category: "Marketing site",
-    summary:
-      "Public site and enrolment funnel for GNR Robotics by SRS EduTech: four grade-band tracks, program pages for 3D printing, drones, applied AI, and TechPreneurship, and a demo-booking flow feeding the center's admissions.",
-    metrics: [],
-    tags: ["Next.js", "Tailwind CSS", "Vercel", "SEO"],
-    links: {
-      live: "https://gnrrobo.com",
-    },
-  },
-  {
     slug: "sentinelmesh",
-    lab: "LAB/012",
+    lab: "LAB/009",
     name: "SentinelMesh",
     tagline: "Energy-aware security for post-quantum IoT — Code Cortex 3.0, Security Track.",
     status: "Shipped",
@@ -325,7 +279,7 @@ export const projects = [
   },
   {
     slug: "backstop",
-    lab: "LAB/013",
+    lab: "LAB/010",
     name: "Backstop",
     tagline: "Payment-failure recovery agent that stops when retrying isn't worth it.",
     status: "Shipped",
@@ -345,7 +299,7 @@ export const projects = [
   },
   {
     slug: "compiler-pipeline-visualizer",
-    lab: "LAB/014",
+    lab: "LAB/011",
     name: "Compiler Pipeline Visualizer",
     tagline: "A C compiler front end that diagnoses its own errors with ML — and lets gcc verify every fix.",
     status: "Shipped",
@@ -365,7 +319,7 @@ export const projects = [
   },
   {
     slug: "strata",
-    lab: "LAB/015",
+    lab: "LAB/012",
     name: "strata",
     tagline: "LSM-tree storage engine in Go, built from scratch.",
     status: "In build",
@@ -382,12 +336,4 @@ export const projects = [
 ];
 
 /** Lighter-weight strip shown under the main index shown under the main index — not full cards. */
-export const inBuildStrip = [
-  {
-    name: "LLM Evaluation Harness",
-    tagline:
-      "Statistically rigorous LLM evaluation with variance estimation and confidence intervals. Rebuilding a nine-model Groq comparison with the statistics it should have had the first time.",
-    status: "In build",
-    links: {},
-  },
-];
+export const inBuildStrip = [];
