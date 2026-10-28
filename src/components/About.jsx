@@ -36,7 +36,7 @@ const rules = [
     no: "04",
     text: (
       <>
-        Running a school and running a service are the same job:{" "}
+        Building a service and running it are the same job:{" "}
         <strong className="font-bold text-bone">keep it up, keep it honest</strong>.
       </>
     ),
@@ -60,8 +60,8 @@ export default function About() {
           className="display text-[clamp(2.125rem,4.6vw,4.5rem)] leading-[0.92]"
         >
           A CS student who ended up{" "}
-          <span className="text-faint">running two things at once</span> — a developer seat and{" "}
-          <em className="not-italic text-acid">a school</em>.
+          <span className="text-faint">shipping real systems</span> — from{" "}
+          <em className="not-italic text-acid">helpdesks to hackathons</em>.
         </motion.h3>
 
         <motion.p

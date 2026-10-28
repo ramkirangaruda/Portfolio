@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 
 const SITE_URL = "https://ramkirangaruda-portfolio.vercel.app";
-const DEFAULT_TITLE = "Garuda Ramkiran — Developer & Operator";
+const DEFAULT_TITLE = "Garuda Ramkiran — Developer";
 const DEFAULT_DESCRIPTION =
-  "Garuda Ramkiran — full-stack developer and systems builder. BTech CSE at VIT Vellore, developer at iFocus Systec, operator at SRS Learning Center.";
+  "Garuda Ramkiran — full-stack developer and systems builder. BTech CSE at VIT Vellore, developer at iFocus Systec.";
 
 function setMeta(attr, key, content) {
   if (!content) return;

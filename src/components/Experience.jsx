@@ -8,10 +8,10 @@ export default function Experience() {
     <section id="experience" className="border-t border-hair px-[4vw] py-[14vh]">
       <SectionHead
         eyebrow="Currently"
-        title="Three roles,"
-        em="in parallel"
-        description="Not a career ladder. An internship shipping AI tooling, contract work on government infrastructure, and keeping a school running day to day."
-        count={[`Roles _${String(experience.length).padStart(2, "0")}_`, "Status _all live_"]}
+        title="Where I've"
+        em="shipped"
+        description="Not a career ladder. An internship shipping AI tooling and internal products used by hundreds of employees."
+        count={[`Roles _${String(experience.length).padStart(2, "0")}_`, "Status _live_"]}
       />
 
       <motion.div

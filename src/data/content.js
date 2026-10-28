@@ -7,17 +7,17 @@ export const profile = {
   resume: "/resume.pdf",
   resumeDate: "Aug 2026",
   availability: null,
-  eyebrow: "Developer & Operator",
+  eyebrow: "Developer",
   /* Each line is a run of words; `v` picks solid, outlined, or accent treatment. */
   headline: [
     [{ t: "Ships", v: "solid" }, { t: "systems", v: "hollow" }],
-    [{ t: "Operates", v: "solid" }, { t: "schools", v: "hollow" }],
+    [{ t: "Wins", v: "solid" }, { t: "hackathons", v: "hollow" }],
     [{ t: "Runs", v: "solid" }, { t: "trails", v: "acid" }],
   ],
   subhead:
-    "BTech CSE student at VIT Vellore building production software by day — full-stack systems, AI pipelines, distributed infrastructure — and running the operations behind a K-12 learning center on the side.",
+    "BTech CSE student at VIT Vellore building production software — full-stack systems, AI pipelines, distributed infrastructure and security tooling.",
   summary:
-    "I'm a CS student who ended up running two things at once: a developer role shipping AI tooling and multi-tenant SaaS, and the day-to-day operations of a school. Along the way I've built an IT helpdesk used by 300+ employees, a government school ERP, a retail analytics engine, and a distributed task scheduler — usually because something was broken and nobody else was going to fix it. JEE 96th percentile, hackathon finalist, ideathon winner, and this year I started running ultra trails for fun.",
+    "I'm a CS student who ships AI tooling and multi-tenant SaaS as a developer. Along the way I've built an IT helpdesk used by 300+ employees, a retail analytics engine, a flash-sale checkout engine and a post-quantum IoT defense system — usually because something was broken and nobody else was going to fix it. JEE 96th percentile, Code Cortex 3.0 winner, DevSpace finalist, Startup Street ideathon winner, and this year I started running ultra trails for fun.",
 };
 
 export const stats = [
@@ -40,88 +40,13 @@ export const experience = [
     ],
     tags: ["React", "TypeScript", "NestJS", "FastAPI", "PostgreSQL"],
   },
-  {
-    org: "ElectraCode",
-    role: "Contract Developer",
-    place: "Bangalore",
-    period: "Ongoing",
-    points: [
-      "Built a School ERP for government residential schools in Karnataka, expanding scope from inventory management to admissions, attendance, timetables, faculty management, and health records.",
-      "Project is being expanded pan-Karnataka.",
-    ],
-    tags: ["FastAPI", "PostgreSQL", "OCR", "Systems design"],
-  },
-  {
-    org: "SRS Learning Center",
-    role: "Operations & Technology",
-    place: "Bengaluru · srsedutech.com",
-    period: "Ongoing",
-    points: [
-      "Manage day-to-day school operations — scheduling, staff coordination, vendor management, student administration — across preschool, K-12 tuition, and IIT foundation coaching.",
-      "Run GNR Robotics (gnrrobo.com), the center's hands-on robotics program — curriculum planning, lab setup, instructor coordination, and admissions.",
-      "Lead franchising and business development: evaluating partnerships, managing agreements, driving expansion of the learning center model.",
-      "Deliver guest lectures for JEE aspirants on problem-solving strategy and subject fundamentals.",
-      "Built and manage the school and GNR Robotics websites, plus the internal tooling behind admissions and hiring.",
-      "Automate administrative workflows to cut manual effort across the center's operations.",
-    ],
-    tags: ["Operations", "Franchising", "Next.js", "Automation"],
-  },
 ];
-
-export const gnr = {
-  name: "GNR Robotics",
-  parent: "by SRS EduTech",
-  url: "https://gnrrobo.com",
-  location: "SRS Learning Centre, Horamavu Agara, Bengaluru",
-  blurb:
-    "Most school robotics programs stop at a kit and a block-coding app. GNR Robotics is the opposite: a low-screen-time, build-it-with-your-hands program where students wire circuits, print parts, fly drones, and pitch what they've made. Six-plus years running, out of SRS EduTech.",
-  pillars: [
-    {
-      title: "3D Printing",
-      description: "CAD design through to printed parts students actually build with.",
-    },
-    {
-      title: "Drone Technology",
-      description: "Drone fundamentals up to FPV piloting in the senior track.",
-    },
-    {
-      title: "Applied AI",
-      description: "AI literacy grounded in working projects, not slideware.",
-    },
-    {
-      title: "TechPreneurship",
-      description: "Product thinking, prototyping, and pitch competitions.",
-    },
-  ],
-  tracks: [
-    {
-      band: "Grades 1–2",
-      name: "Tinker Explorers",
-      description: "Play-based circuits and logic games.",
-    },
-    {
-      band: "Grades 3–5",
-      name: "Foundation Builders",
-      description: "Block coding, Arduino circuits, and an intro to 3D printing.",
-    },
-    {
-      band: "Grades 6–9",
-      name: "Junior Innovator",
-      description: "AI literacy, electronics, CAD design, and drone basics.",
-    },
-    {
-      band: "Grades 10–12",
-      name: "TechPreneurship Track",
-      description: "Embedded systems, Python, FPV drone piloting, and pitch competitions.",
-    },
-  ],
-};
 
 export const toastmasters = {
   club: "Toastmasters International",
   role: "Club Treasurer",
   blurb:
-    "I joined to get better at saying things out loud — the same skill that decides whether a design doc lands or a guest lecture holds a room. Ended up holding the club's ledger too.",
+    "I joined to get better at saying things out loud — the same skill that decides whether a design doc lands or a demo holds a room. Ended up holding the club's ledger too.",
   pillars: [
     {
       title: "Club Treasurer",
@@ -204,39 +129,21 @@ export const education = [
 export const achievements = [
   {
     title: "Code Cortex 3.0",
-    subtitle: "Security Track",
+    subtitle: "Winner — Security Track",
     description:
       "Built SentinelMesh: an energy-aware, post-quantum defense system spanning phishing, malware, ESP32 radio mesh and physical tamper detection.",
-  },
-  {
-    title: "Razorpay AI Builder Buildathon",
-    subtitle: "Track 3 — AI Revenue Recovery",
-    description:
-      "Built Backstop, a payment-recovery agent that prices the cost of each retry and stops when it isn't worth it.",
-  },
-  {
-    title: "Samsung EnnovateX AX Hackathon 2026",
-    subtitle: "Architecture Submission",
-    description:
-      "Submitted Mosaic, a context-aware adaptive memory management design for on-device AI.",
-  },
-  {
-    title: "HTAD-08",
-    subtitle: "Tessera Quest",
-    description:
-      "Built an offline Raspberry Pi classroom AI hub driven by printed cards and a USB key per student.",
-  },
-  {
-    title: "Startup Street 9.0",
-    subtitle: "1st Prize — Ideathon",
-    description:
-      "Proposed a UV-based inspection device to detect used clothing in retail return workflows, presenting feasibility, strategy, and business impact.",
   },
   {
     title: "DevSpace Hackathon",
     subtitle: "Sponsored Track Finalist",
     description:
       "Built RetailOS end-to-end in 54 hours — ETL pipelines, star-schema warehouse, and live KPI dashboards.",
+  },
+  {
+    title: "Startup Street 9.0",
+    subtitle: "1st Prize — Ideathon",
+    description:
+      "Proposed a UV-based inspection device to detect used clothing in retail return workflows, presenting feasibility, strategy, and business impact.",
   },
 ];
 
@@ -261,7 +168,6 @@ export const extras = [
 export const nav = [
   { label: "Work", href: "#projects" },
   { label: "Experience", href: "#experience" },
-  { label: "Robotics", href: "#gnr" },
   { label: "Skills", href: "#skills" },
   { label: "Education", href: "#education" },
   { label: "Contact", href: "#contact" },

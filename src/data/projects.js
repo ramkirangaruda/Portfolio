@@ -156,62 +156,8 @@ export const projects = [
     },
   },
   {
-    slug: "tessera-quest",
-    lab: "LAB/003",
-    name: "Tessera Quest",
-    tagline: "Offline classroom AI hub on a Raspberry Pi, driven by printed cards and a USB key per student.",
-    status: "In build",
-    year: "2026",
-    category: "EdTech / embedded",
-    summary:
-      "A gamified STEM learning hub for classrooms with no reliable internet and no per-student laptops. Printed ArUco cards read by a webcam are the input device; each student carries a USB \"Tessera key\" holding their progress and model precision profile; a virtual pet whose mood and hunger track learning progress is the core game loop. Built for HTAD-08.",
-    metrics: [
-      { value: "138", label: "Go tests" },
-      { value: "141", label: "TypeScript tests" },
-      { value: "0", label: "Accounts or cloud calls" },
-    ],
-    tags: ["Raspberry Pi", "ArUco/OpenCV", "Tessera", "Python", "Offline-first"],
-    links: {
-      github: "https://github.com/ramkirangaruda/Gamified-E-Learning-Platform",
-    },
-  },
-  {
-    slug: "staffroom",
-    lab: "LAB/004",
-    name: "Staffroom",
-    tagline: "Teacher recruitment marketplace for the Indian school market.",
-    status: "Live",
-    year: "2026",
-    category: "Full-stack platform",
-    summary:
-      "A hiring portal for schools, built into the SRS EduTech ecosystem — job posting, applicant tracking and teacher profiles, running on Vercel with Neon Postgres.",
-    metrics: [],
-    tags: ["Next.js", "Prisma", "PostgreSQL", "NextAuth v5", "Vercel", "Neon"],
-    links: {
-      live: "https://staffroom-three.vercel.app",
-    },
-  },
-  {
-    slug: "kreis-school-erp",
-    lab: "LAB/005",
-    name: "Kreis School ERP",
-    tagline: "School ERP for Karnataka government residential schools, scoped pan-state.",
-    status: "In delivery",
-    year: "2026",
-    category: "Government infrastructure",
-    summary:
-      "Contract work for KREIS (Karnataka Residential Educational Institutions Society) under ElectraCode. The Inventory Management System is delivered — FastAPI with async SQLAlchemy, transaction-safe stock movements, audit logging and institution-scoped access. The wider ERP covering admissions, attendance, timetables, faculty and health records is proposed and in delivery across three phases, with Kannada OCR and face-scanner integration as the hard parts.",
-    metrics: [
-      { value: "850", label: "Schools in scope" },
-      { value: "~255,000", label: "Students in scope" },
-      { value: "3", label: "Delivery phases" },
-    ],
-    tags: ["FastAPI", "Async SQLAlchemy", "PostgreSQL", "Jinja2", "HTMX", "Docker Compose", "Kannada OCR"],
-    links: {},
-  },
-  {
     slug: "ticketzilla",
-    lab: "LAB/006",
+    lab: "LAB/003",
     name: "TicketZilla",
     tagline: "Internal IT helpdesk, live at iFocus Systec",
     status: "Deployed",
@@ -227,7 +173,7 @@ export const projects = [
   },
   {
     slug: "retailos",
-    lab: "LAB/007",
+    lab: "LAB/004",
     name: "RetailOS",
     tagline: "Retail analytics engine — DevSpace hackathon finalist",
     status: "Shipped",
@@ -242,24 +188,8 @@ export const projects = [
     },
   },
   {
-    slug: "gridforge",
-    lab: "LAB/008",
-    name: "GridForge",
-    tagline: "Distributed task scheduling platform",
-    status: "In build",
-    year: "2026",
-    category: "Distributed systems",
-    summary:
-      "Dispatches Python jobs to remote workers via Redis-backed CPU/GPU queues, with isolated Docker execution, PyTorch/CUDA support, and a real-time monitoring dashboard.",
-    metrics: [],
-    tags: ["FastAPI", "Redis", "Docker", "React", "Tailwind CSS"],
-    links: {
-      github: "https://github.com/ramkirangaruda/gridforge-backend",
-    },
-  },
-  {
     slug: "sentinelmesh",
-    lab: "LAB/009",
+    lab: "LAB/005",
     name: "SentinelMesh",
     tagline: "Energy-aware security for post-quantum IoT — Code Cortex 3.0, Security Track.",
     status: "Shipped",
@@ -277,63 +207,7 @@ export const projects = [
       github: "https://github.com/ramkirangaruda/Sentinel-Mesh",
     },
   },
-  {
-    slug: "backstop",
-    lab: "LAB/010",
-    name: "Backstop",
-    tagline: "Payment-failure recovery agent that stops when retrying isn't worth it.",
-    status: "Shipped",
-    year: "2026",
-    category: "Fintech / AI",
-    summary:
-      "Built for the Razorpay AI Builder Internship 2026 buildathon, Track 3 (AI Revenue Recovery). Most recovery systems maximise attempts; Backstop prices what an attempt costs — network penalties, issuer trust, customer annoyance — and does less than a naive retry policy. Evaluated on a seeded batch of 120 failures against Razorpay's documented default behaviour, with hard compliance rules as a final safety net.",
-    metrics: [
-      { value: "137", label: "Attempts vs 280 naive" },
-      { value: "61", label: "Contacts vs 74 naive" },
-      { value: "120", label: "Seeded failures" },
-    ],
-    tags: ["Python", "LLM", "Razorpay", "Decision theory"],
-    links: {
-      github: "https://github.com/ramkirangaruda/Razorpay",
-    },
-  },
-  {
-    slug: "compiler-pipeline-visualizer",
-    lab: "LAB/011",
-    name: "Compiler Pipeline Visualizer",
-    tagline: "A C compiler front end that diagnoses its own errors with ML — and lets gcc verify every fix.",
-    status: "Shipped",
-    year: "2026",
-    category: "Compilers / ML",
-    summary:
-      "Parser-state and symbol-table features feed a classifier that ranks the cause of a compile error and proposes a repair; compiler fix-its and a repair search cover everything else. gcc acts as the judge — a fix is shown only if gcc accepts it — and a REINFORCE policy orders the valid candidates. Includes a MiniC teaching language and a Studio UI.",
-    metrics: [
-      { value: "244", label: "Tests" },
-      { value: "98.6%", label: "Repairs that compile" },
-      { value: "50", label: "Compiler-derived features" },
-    ],
-    tags: ["Python", "gcc", "pycparser", "Reinforcement learning", "React"],
-    links: {
-      github: "https://github.com/ramkirangaruda/Compiler-Pipeline-Visualizer",
-    },
-  },
-  {
-    slug: "strata",
-    lab: "LAB/012",
-    name: "strata",
-    tagline: "LSM-tree storage engine in Go, built from scratch.",
-    status: "In build",
-    year: "2026",
-    category: "Databases",
-    summary:
-      "Write-ahead log, sorted string tables with bloom filters, MVCC through sequence numbers, and crash recovery, with a kill -9 durability test. Phase A1 of 6: the write path and recovery are done; compaction, block cache, transactions and deterministic simulation testing are next.",
-    metrics: [],
-    tags: ["Go", "LSM tree", "MVCC", "WAL", "Bloom filters"],
-    links: {
-      github: "https://github.com/ramkirangaruda/strata",
-    },
-  },
 ];
 
-/** Lighter-weight strip shown under the main index shown under the main index — not full cards. */
+/** Lighter-weight strip shown under the main index — not full cards. */
 export const inBuildStrip = [];
