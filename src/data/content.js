@@ -6,7 +6,6 @@ export const profile = {
   linkedin: "https://www.linkedin.com/in/ramkiran-garuda-864011321/",
   resume: "/resume.pdf",
   resumeDate: "Aug 2026",
-  // TODO(ramkiran): exact availability-line wording, e.g. "Open to Summer 2027 SDE internships"
   availability: null,
   eyebrow: "Developer & Operator",
   /* Each line is a run of words; `v` picks solid, outlined, or accent treatment. */
@@ -203,6 +202,30 @@ export const education = [
 ];
 
 export const achievements = [
+  {
+    title: "Code Cortex 3.0",
+    subtitle: "Security Track",
+    description:
+      "Built SentinelMesh: an energy-aware, post-quantum defense system spanning phishing, malware, ESP32 radio mesh and physical tamper detection.",
+  },
+  {
+    title: "Razorpay AI Builder Buildathon",
+    subtitle: "Track 3 — AI Revenue Recovery",
+    description:
+      "Built Backstop, a payment-recovery agent that prices the cost of each retry and stops when it isn't worth it.",
+  },
+  {
+    title: "Samsung EnnovateX AX Hackathon 2026",
+    subtitle: "Architecture Submission",
+    description:
+      "Submitted Mosaic, a context-aware adaptive memory management design for on-device AI.",
+  },
+  {
+    title: "HTAD-08",
+    subtitle: "Tessera Quest",
+    description:
+      "Built an offline Raspberry Pi classroom AI hub driven by printed cards and a USB key per student.",
+  },
   {
     title: "Startup Street 9.0",
     subtitle: "1st Prize — Ideathon",
