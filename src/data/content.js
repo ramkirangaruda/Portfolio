@@ -5,7 +5,7 @@ export const profile = {
   github: "https://github.com/ramkirangaruda",
   linkedin: "https://www.linkedin.com/in/ramkiran-garuda-864011321/",
   resume: "/resume.pdf",
-  resumeDate: "Aug 2026",
+  resumeDate: "Oct 2026",
   availability: null,
   eyebrow: "Developer",
   /* Each line is a run of words; `v` picks solid, outlined, or accent treatment. */
